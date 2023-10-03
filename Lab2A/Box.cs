@@ -19,13 +19,13 @@ namespace Lab2A
 
         public override void SetData()
         {
-            Console.Write("Enter the length: ");
+            Console.WriteLine("Enter the length: ");
             Length = double.Parse(Console.ReadLine());
 
-            Console.Write("Enter the width: ");
+            Console.WriteLine("Enter the width: ");
             Width = double.Parse(Console.ReadLine());
 
-            Console.Write("Enter the height: ");
+            Console.WriteLine("Enter the height: ");
             Height = double.Parse(Console.ReadLine());
         }
 
@@ -41,7 +41,9 @@ namespace Lab2A
 
         public override string ToString()
         {
-            return $"Type: {Type}, Length: {Length}, Width: {Width}, Height: {Height}, Surface Area: {CalculateArea()}, Volume: {CalculateVolume()}";
+            string dimensions = CalculateVolume() > 0 ? "3D" : "2D";
+
+            return $"{Type,-15} {dimensions,-15} {CalculateArea(),-30} {CalculateVolume(),-30}";
         }
     }
 }

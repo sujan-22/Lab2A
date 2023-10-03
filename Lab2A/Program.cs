@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -13,11 +14,13 @@ namespace Lab2A
         {
             List<Shape> shapes = new List<Shape>();
 
-            while (true)
+            bool myBool = false;
+            while (!myBool)
             {
                 string menu =
 $@"
- \u001b[32mSujan's Geometry\u001b[0m
+-----------------------------------------
+ Sujan's Geometry
 -----------------------------------------
  1) Rectangle             2) Square      
  3) Box                   4) Cube
@@ -25,11 +28,11 @@ $@"
  7) Cylinder              8) Sphere
  9) Triangle             10) Tetrahedron
 
- 0) List all shapes and exit               (0 shapes entered so far)
+ 0) List all shapes and exit               ({shapes.Count} shapes entered so far)
 -----------------------------------------
 Enter your choice: ";
 
-                Console.Write(menu);
+                Console.WriteLine(menu);
 
                 int choice;
                 if (!int.TryParse(Console.ReadLine(), out choice))
@@ -43,73 +46,81 @@ Enter your choice: ";
                     case 1:
                         Rectangle rectangle = new Rectangle();
                         rectangle.SetData();
-                        rectangle.CalculateArea();
-                        rectangle.CalculateVolume();
                         shapes.Add(rectangle);
                         break;
 
                     case 2:
                         Square square = new Square();
+                        square.SetData();
                         shapes.Add(square);
                         break;
 
                     case 3:
                         Box box = new Box();
+                        box.SetData();
                         shapes.Add(box);
                         break;
 
                     case 4:
                         Cube cube = new Cube();
+                        cube.SetData();
                         shapes.Add(cube);
                         break;
 
                     case 5:
                         Ellipse ellipse = new Ellipse();
+                        ellipse.SetData();
                         shapes.Add(ellipse);
                         break;
 
                     case 6:
                         Circle circle = new Circle();
+                        circle.SetData();
                         shapes.Add(circle);
                         break;
 
                     case 7:
                         Cylinder cylinder = new Cylinder();
+                        cylinder.SetData();
                         shapes.Add(cylinder);
                         break;
 
                     case 8:
                         Sphere sphere = new Sphere();
+                        sphere.SetData();
                         shapes.Add(sphere);
                         break;
 
                     case 9:
                         Triangle triangle = new Triangle();
+                        triangle.SetData();
                         shapes.Add(triangle);
                         break;
 
                     case 10:
                         Tetrahedron tetrahedron = new Tetrahedron();
+                        tetrahedron.SetData();
                         shapes.Add(tetrahedron);
                         break;
                     case 0:
-                        Console.WriteLine($"Exiting\n({shapes.Count} shapes entered so far)");
-                        return;
+
+                        // Define the column headers
+                        Console.WriteLine("{0,-15} {1,-15} {2,-30} {3,-30}", "Type", "Dimensions", "Area", "Volume");
+
+                        foreach (Shape shape in shapes)
+                        {
+                            Console.WriteLine(shape);
+                        }
+                        break;
+
+
                     default:
                         Console.WriteLine("Invalid choice. Please select a valid option.");
                         break;
                 }
-                Console.WriteLine("Shapes:");
-                foreach (var shape in shapes)
-                {
-                    Console.WriteLine(shape);
-                }
-
 
             }
 
-            
-        
         }
     }
 }

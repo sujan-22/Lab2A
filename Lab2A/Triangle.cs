@@ -38,7 +38,9 @@ namespace Lab2A
 
         public override string ToString()
         {
-            return $"Type: {Type},  Base: {Base}, Height: {Height}, Area: {CalculateArea()}";
+            string dimensions = CalculateVolume() > 0 ? "3D" : "2D";
+
+            return $"{Type, -15} {dimensions, -15} {CalculateArea()}";
         }
     }
 }

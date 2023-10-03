@@ -17,7 +17,7 @@ namespace Lab2A
 
         public override void SetData()
         {
-            Console.Write("Enter the radius: ");
+            Console.WriteLine("Enter the radius: ");
             Radius = double.Parse(Console.ReadLine());
         }
 
@@ -33,7 +33,9 @@ namespace Lab2A
 
         public override string ToString()
         {
-            return $"Type: {Type}, Radius: {Radius}, Area: {CalculateArea()}";
+            string dimensions = CalculateVolume() > 0 ? "3D" : "2D";
+
+            return $"{Type,-15} {dimensions,-15} {CalculateArea(),-30}";
         }
     }
 

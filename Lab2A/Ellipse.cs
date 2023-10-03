@@ -18,10 +18,10 @@ namespace Lab2A
 
         public override void SetData()
         {
-            Console.Write("Enter the major axis: ");
+            Console.WriteLine("Enter the major axis: ");
             MajorAxis = double.Parse(Console.ReadLine());
 
-            Console.Write("Enter the minor axis: ");
+            Console.WriteLine("Enter the minor axis: ");
             MinorAxis = double.Parse(Console.ReadLine());
         }
 
@@ -37,7 +37,9 @@ namespace Lab2A
 
         public override string ToString()
         {
-            return $"Type: {Type}, Major Axis: {MajorAxis}, Minor Axis: {MinorAxis}, Area: {CalculateArea()}";
+            string dimensions = CalculateVolume() > 0 ? "3D" : "2D";
+
+            return $"{Type,-15} {dimensions,-15} {CalculateArea(),-30}";
         }
     }
 }
