@@ -17,7 +17,7 @@ namespace Lab2A
 
         public override void SetData()
         {
-            Console.WriteLine("Enter the side length: ");
+            Console.Write("Enter the side length: ");
             SideLength = double.Parse(Console.ReadLine());
         }
 
@@ -35,7 +35,7 @@ namespace Lab2A
         {
             string dimensions = CalculateVolume() > 0 ? "3D" : "2D";
 
-            return $"{Type,-15} {dimensions,-15} {CalculateArea(),-30}";
+            return $"{Type,-15} {dimensions,-15} {CalculateArea(),-10}";
         }
     }
 }

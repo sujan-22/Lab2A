@@ -5,6 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Lab2A
 {
@@ -19,20 +20,19 @@ namespace Lab2A
             {
                 string menu =
 $@"
------------------------------------------
+--------------------------------------------------------------------
  Sujan's Geometry
------------------------------------------
- 1) Rectangle             2) Square      
- 3) Box                   4) Cube
- 5) Ellipse               6) Circle
- 7) Cylinder              8) Sphere
- 9) Triangle             10) Tetrahedron
+--------------------------------------------------------------------
+ 1) Rectangle       2) Square       3) Box  
+ 4) Cube            5) Ellipse      6) Circle           
+ 7) Cylinder        8) Sphere       9) Triangle   
+10) Tetrahedron
 
- 0) List all shapes and exit               ({shapes.Count} shapes entered so far)
------------------------------------------
+ 0) List all shapes and exit            ( {shapes.Count} shapes entered so far! )
+--------------------------------------------------------------------
 Enter your choice: ";
 
-                Console.WriteLine(menu);
+                Console.Write(menu);
 
                 int choice;
                 if (!int.TryParse(Console.ReadLine(), out choice))
@@ -105,7 +105,9 @@ Enter your choice: ";
                     case 0:
 
                         // Define the column headers
-                        Console.WriteLine("{0,-15} {1,-15} {2,-30} {3,-30}", "Type", "Dimensions", "Area", "Volume");
+                        Console.WriteLine(new string('=', 50));
+                        Console.WriteLine("{0,-15} {1,-15} {2,-10} {3,-10}", "Type", "Dimensions", "Area", "Volume");
+                        Console.WriteLine(new string('=', 50));
 
                         foreach (Shape shape in shapes)
                         {

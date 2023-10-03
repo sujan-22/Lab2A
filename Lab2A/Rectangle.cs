@@ -12,10 +12,10 @@ namespace Lab2A
         public double Width { get; set; }
 
         public override void SetData() {
-            Console.WriteLine("Enter the lenght: ");
+            Console.Write("Enter the lenght: ");
             Length = double.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter the width: ");
+            Console.Write("Enter the width: ");
             Width = double.Parse(Console.ReadLine());
         }
 
@@ -38,7 +38,7 @@ namespace Lab2A
         {
             string dimensions = CalculateVolume() > 0 ? "3D" : "2D";
 
-            return $"{Type,-15} {dimensions,-15} {CalculateArea(),-30}";
+            return $"{Type,-15} {dimensions,-15} {CalculateArea(),-10}";
         }
     
     }

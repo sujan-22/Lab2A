@@ -18,17 +18,17 @@ namespace Lab2A
 
         public override void SetData()
         {
-            Console.WriteLine("Enter the lenght of base: ");
+            Console.Write("Enter the lenght of base: ");
             Base = double.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter the height: ");
+            Console.Write("Enter the height: ");
             Height = double.Parse(Console.ReadLine());
 
         }
 
         public override double CalculateArea()
         {
-            return ( Base * Height ) / 2;
+            return Math.Round(((Base * Height ) / 2), 3);
         }
 
         public override double CalculateVolume()
@@ -40,7 +40,7 @@ namespace Lab2A
         {
             string dimensions = CalculateVolume() > 0 ? "3D" : "2D";
 
-            return $"{Type, -15} {dimensions, -15} {CalculateArea()}";
+            return $"{Type, -15} {dimensions, -15} {CalculateArea(), -10}";
         }
     }
 }

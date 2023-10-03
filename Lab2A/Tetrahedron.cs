@@ -12,7 +12,7 @@ namespace Lab2A
 
         public override void SetData()
         {
-            Console.WriteLine("Enter the Edge lenght: ");
+            Console.Write("Enter the Edge lenght: ");
             EdgeLength = double.Parse(Console.ReadLine());
 
         }
@@ -23,19 +23,18 @@ namespace Lab2A
 
         public override double CalculateArea()
         {
-            return Math.Sqrt(3) * Math.Pow(EdgeLength, 2);
+            return Math.Round(Math.Sqrt(3) * Math.Pow(EdgeLength, 2), 3);
         }
 
         public override double CalculateVolume()
         {
-            return (Math.Pow(EdgeLength, 3))/(6 * Math.Sqrt(2));
+            return Math.Round((Math.Pow(EdgeLength, 3))/(6 * Math.Sqrt(2)), 3);
         }
 
         public override string ToString()
         {
             string dimensions = CalculateVolume() > 0 ? "3D" : "2D";
-
-            return $"{Type, -15} {dimensions, -15} {CalculateArea(), -30} {CalculateVolume(), -30}";
+            return $"{Type, -15} {dimensions, -15} {CalculateArea(), -10} {CalculateVolume(), -10}";
         }
     }
 }
