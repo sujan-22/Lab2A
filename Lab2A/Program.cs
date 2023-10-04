@@ -37,16 +37,15 @@ namespace Lab2A
                 // Display the main menu to the user
                 string menu =
 $@"
---------------------------------------------------------------------
- Sujan's Geometry
---------------------------------------------------------------------
- 1) Rectangle       2) Square       3) Box  
- 4) Cube            5) Ellipse      6) Circle           
- 7) Cylinder        8) Sphere       9) Triangle   
-10) Tetrahedron
-
- 0) List all shapes and exit            ( {shapes.Count} shapes entered so far! )
---------------------------------------------------------------------
+|--------------------------------------------------------------------|
+|                         Sujan's Geometry                           |
+|--------------------------------------------------------------------|
+| 1) Rectangle  |   2) Square   |   3) Box       |  10) Tetrahedron  |
+| 4) Cube       |   5) Ellipse  |   6) Circle                        |
+| 7) Cylinder   |   8) Sphere   |   9) Triangle                      |
+|                                                                    |
+| 0) List all shapes and exit            ( {shapes.Count} shapes entered so far! )|
+|--------------------------------------------------------------------|
 Enter your choice: ";
 
                 // Prints the menu
