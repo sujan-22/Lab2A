@@ -23,7 +23,7 @@ namespace Lab2A
 
         public override double CalculateArea()
         {
-            return PI * Math.Pow(Radius, 2);
+            return Math.Round(PI * Math.Pow(Radius, 2), 3);
         }
 
         public override double CalculateVolume()
@@ -35,7 +35,7 @@ namespace Lab2A
         {
             string dimensions = CalculateVolume() > 0 ? "3D" : "2D";
 
-            return $"{Type,-15} {dimensions,-15} {CalculateArea(),-10}";
+            return $"{Type,-15} {dimensions,-15} {CalculateArea(),-15}";
         }
     }
 

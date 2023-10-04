@@ -103,18 +103,25 @@ Enter your choice: ";
                         shapes.Add(tetrahedron);
                         break;
                     case 0:
-
+                        Console.WriteLine(" ");
+                        Console.WriteLine("Displaying table of all instantiated shapes...");
+                        Console.WriteLine(" ");
                         // Define the column headers
-                        Console.WriteLine(new string('=', 50));
-                        Console.WriteLine("{0,-15} {1,-15} {2,-10} {3,-10}", "Type", "Dimensions", "Area", "Volume");
-                        Console.WriteLine(new string('=', 50));
+                        Console.WriteLine(new string('~', 60));
+                        Console.WriteLine("{0,-15} {1,-15} {2,-15} {3,-15}", "Type", "Dimensions", "Area", "Volume");
+                        Console.WriteLine(new string('~', 60));
 
                         foreach (Shape shape in shapes)
                         {
                             Console.WriteLine(shape);
+                            Console.WriteLine(new string('-', 60));
                         }
-                        break;
 
+                        Console.WriteLine("Press any key to exit..");
+                        Console.ReadKey();
+
+                        myBool = true;
+                        break;
 
                     default:
                         Console.WriteLine("Invalid choice. Please select a valid option.");

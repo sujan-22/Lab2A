@@ -20,22 +20,22 @@ namespace Lab2A
             Console.Write("Enter the radius: ");
             Radius = double.Parse(Console.ReadLine());
         }
-
+            
         public override double CalculateArea()
         {
-            return 4 * PI * Math.Pow(Radius, 2);
+            return Math.Round(4 * PI * Math.Pow(Radius, 2), 3);
         }
 
         public override double CalculateVolume()
         {
-            return (4.0 / 3) * PI * Math.Pow(Radius, 3);
+            return Math.Round((4.0 / 3) * PI * Math.Pow(Radius, 3), 2);
         }
 
         public override string ToString()
         {
             string dimensions = CalculateVolume() > 0 ? "3D" : "2D";
 
-            return $"{Type,-15} {dimensions,-15} {CalculateArea(),-10} {CalculateVolume(),-10}";
+            return $"{Type,-15} {dimensions,-15} {CalculateArea(),-15} {CalculateVolume(),-15}";
         }
     }
 }

@@ -27,19 +27,19 @@ namespace Lab2A
 
         public override double CalculateArea()
         {
-            return 2 * PI * Radius * (Radius + Height);
+            return Math.Round(2 * PI * Radius * (Radius + Height), 3);
         }
 
         public override double CalculateVolume()
         {
-            return PI * Math.Pow(Radius, 2) * Height;
+            return Math.Round(PI * Math.Pow(Radius, 2) * Height, 3);
         }
 
         public override string ToString()
         {
             string dimensions = CalculateVolume() > 0 ? "3D" : "2D";
 
-            return $"{Type,-15} {dimensions,-15} {CalculateArea(),-10} {CalculateVolume(),-10}";
+            return $"{Type,-15} {dimensions,-15} {CalculateArea(),-15} {CalculateVolume(),-15}";
         }
     }
 }

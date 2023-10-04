@@ -40,7 +40,7 @@ namespace Lab2A
         {
             string dimensions = CalculateVolume() > 0 ? "3D" : "2D";
 
-            return $"{Type, -15} {dimensions, -15} {CalculateArea(), -10}";
+            return $"{Type, -15} {dimensions, -15} {CalculateArea(), -15}";
         }
     }
 }
