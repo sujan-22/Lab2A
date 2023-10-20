@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 
 namespace Lab2A
 {
-    public class Sphere : Shape
+    public class Sphere : ThreeDimension
     {
         public double Radius { get; set; }
 

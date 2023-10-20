@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 
 namespace Lab2A
 {
-    public class Rectangle : Shape
+    public class Rectangle : TwoDimension
     {
         public double Length { get; set; }
         public double Width { get; set; }

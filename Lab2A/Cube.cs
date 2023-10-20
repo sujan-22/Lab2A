@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 
 namespace Lab2A
 {
-    public class Cube : Shape
+    public class Cube : ThreeDimension
     {
         public double SideLength { get; set; }
 

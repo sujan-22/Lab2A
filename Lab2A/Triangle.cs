@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 
 namespace Lab2A
 {
-    public class Triangle : Shape
+    public class Triangle : TwoDimension
     {
         private double Base { get; set; }
         private double Height { get; set; }

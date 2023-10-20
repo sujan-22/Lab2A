@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 
 namespace Lab2A
 {
-    public class Square : Shape
+    public class Square : TwoDimension
     {
         public double SideLength { get; set; }
 

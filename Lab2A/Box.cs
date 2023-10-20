@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 
 namespace Lab2A
 {
-    public class Box : Shape
+    public class Box : ThreeDimension
     {
         public double Length { get; set; }
         public double Width { get; set; }

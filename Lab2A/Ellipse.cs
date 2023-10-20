@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 
 namespace Lab2A
 {
-    public class Ellipse : Shape
+    public class Ellipse : TwoDimension
     {
         public double MajorAxis { get; set; }
         public double MinorAxis { get; set; }

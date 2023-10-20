@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 
 namespace Lab2A
 {
-    public class Cylinder : Shape
+    public class Cylinder : ThreeDimension
     {
         public double Radius { get; set; }
         public double Height { get; set; }

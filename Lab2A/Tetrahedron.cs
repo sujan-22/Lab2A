@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 
 namespace Lab2A
 {
-    public class Tetrahedron : Shape
+    public class Tetrahedron : ThreeDimension
     {
         public double EdgeLength { get; set; }
 

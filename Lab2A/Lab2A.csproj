@@ -55,7 +55,9 @@
     <Compile Include="Sphere.cs" />
     <Compile Include="Square.cs" />
     <Compile Include="Tetrahedron.cs" />
+    <Compile Include="ThreeDimension.cs" />
     <Compile Include="Triangle.cs" />
+    <Compile Include="TwoDimension.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

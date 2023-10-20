@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 
 namespace Lab2A
 {
-    public class Circle : Shape
+    public class Circle : TwoDimension
     {
         public double Radius { get; set; }
 

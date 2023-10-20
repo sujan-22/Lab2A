@@ -25,7 +25,9 @@ namespace Lab2A
         static void Main(string[] args)
         {
             // Create a list to store shapes
-            List<Shape> shapes = new List<Shape>();
+            List<ThreeDimension> shapes3D = new List<ThreeDimension>();
+            List<TwoDimension> shapes2D = new List<TwoDimension>();
+            int shapes = 0;
 
             // Create a boolean flag to control the while loop
             bool myBool = false;
@@ -44,7 +46,7 @@ $@"
 | 4) Cube       |   5) Ellipse  |   6) Circle                        |
 | 7) Cylinder   |   8) Sphere   |   9) Triangle                      |
 |                                                                    |
-| 0) List all shapes and exit            ( {shapes.Count} shapes entered so far! )|
+| 0) List all shapes and exit            ( {shapes} shapes entered so far! )|
 |--------------------------------------------------------------------|
 Enter your choice: ";
 
@@ -62,78 +64,79 @@ Enter your choice: ";
 
                 switch (choice)
                 {
-                    case 1:
                         // Create a Rectangle object, set its data, and add it to the list
+                    case 1:
                         Rectangle rectangle = new Rectangle();
                         rectangle.SetData();
-                        shapes.Add(rectangle);
+                        shapes2D.Add(rectangle);
                         break;
 
-                    case 2:
                         // Create a Square object, set its data, and add it to the list
+                    case 2:
                         Square square = new Square();
                         square.SetData();
-                        shapes.Add(square);
+                        shapes2D.Add(square);
                         break;
 
-                    case 3:
                         // Create a Box object, set its data, and add it to the list
+                    case 3:
                         Box box = new Box();
                         box.SetData();
-                        shapes.Add(box);
+                        shapes3D.Add(box);
                         break;
 
-                    case 4:
                         // Create a Cube object, set its data, and add it to the list
+                    case 4:
                         Cube cube = new Cube();
                         cube.SetData();
-                        shapes.Add(cube);
+                        shapes3D.Add(cube);
                         break;
 
-                    case 5:
                         // Create a Ellipse object, set its data, and add it to the list
+                    case 5:
                         Ellipse ellipse = new Ellipse();
                         ellipse.SetData();
-                        shapes.Add(ellipse);
+                        shapes2D.Add(ellipse);
                         break;
 
-                    case 6:
                         // Create a Circle object, set its data, and add it to the list
+                    case 6:
                         Circle circle = new Circle();
                         circle.SetData();
-                        shapes.Add(circle);
+                        shapes2D.Add(circle);
                         break;
 
-                    case 7:
                         // Create a Cylinder object, set its data, and add it to the list
+                    case 7:
                         Cylinder cylinder = new Cylinder();
                         cylinder.SetData();
-                        shapes.Add(cylinder);
+                        shapes3D.Add(cylinder);
                         break;
 
-                    case 8:
                         // Create a Sphere object, set its data, and add it to the list
+                    case 8:
                         Sphere sphere = new Sphere();
                         sphere.SetData();
-                        shapes.Add(sphere);
+                        shapes3D.Add(sphere);
                         break;
 
-                    case 9:
                         // Create a Triangle object, set its data, and add it to the list
+                    case 9:
                         Triangle triangle = new Triangle();
                         triangle.SetData();
-                        shapes.Add(triangle);
+                        shapes2D.Add(triangle);
                         break;
 
-                    case 10:
                         // Create a Tetrahedron object, set its data, and add it to the list
+                    case 10:
                         Tetrahedron tetrahedron = new Tetrahedron();
                         tetrahedron.SetData();
-                        shapes.Add(tetrahedron);
+                        shapes3D.Add(tetrahedron);
                         break;
+
                     case 0:
                         Console.WriteLine(" ");
-                        Console.WriteLine("Displaying table of all instantiated shapes...");
+                        Console.WriteLine("Displaying table of " + shapes + " instantiated shapes...");
                         Console.WriteLine(" ");
 
                         // Define the column headers
@@ -142,7 +145,12 @@ Enter your choice: ";
                         Console.WriteLine(new string('~', 60));
 
                         // Iterate through the list of shapes and display their information
-                        foreach (Shape shape in shapes)
+                        foreach (ThreeDimension shape in shapes3D)
+                        {
+                            Console.WriteLine(shape);
+                            Console.WriteLine(new string('-', 60));
+                        }  
+                        foreach (TwoDimension shape in shapes2D)
                         {
                             Console.WriteLine(shape);
                             Console.WriteLine(new string('-', 60));
@@ -160,6 +168,7 @@ Enter your choice: ";
                         Console.WriteLine("Invalid choice. Please select a valid option.");
                         break;
                 }
+                shapes = shapes3D.Count + shapes2D.Count;
 
             }
 
